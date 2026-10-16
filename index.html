@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics — Complete Study Guide</title>
+<style>
+  :root{
+    --bg:#0f1419; --panel:#1a2029; --panel2:#232b36; --text:#e6edf3;
+    --muted:#9aa7b4; --accent:#4ea1ff; --accent2:#7ee787; --warn:#ffa657;
+    --danger:#ff7b72; --border:#30363d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.65;
+  }
+  header{
+    background:linear-gradient(135deg,#1a2029,#0f1419);
+    border-bottom:1px solid var(--border); padding:2rem 1.5rem;
+    position:sticky; top:0; z-index:100;
+  }
+  header h1{font-size:1.5rem; margin-bottom:.3rem}
+  header p{color:var(--muted); font-size:.88rem}
+  .toc-top{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.9rem}
+  .toc-top a{
+    background:var(--panel); border:1px solid var(--border);
+    color:var(--text); text-decoration:none; padding:.25rem .7rem;
+    border-radius:20px; font-size:.78rem;
+  }
+  .toc-top a:hover{border-color:var(--accent); color:var(--accent)}
+  .wrap{display:flex; max-width:1400px; margin:0 auto}
+  nav{
+    width:270px; padding:1.5rem 1rem; position:sticky; top:160px;
+    height:calc(100vh - 160px); overflow-y:auto; flex-shrink:0;
+    border-right:1px solid var(--border);
+  }
+  nav a{
+    display:block; color:var(--muted); text-decoration:none;
+    padding:.4rem .7rem; border-radius:6px; font-size:.85rem;
+    border-left:2px solid transparent;
+  }
+  nav a:hover{background:var(--panel); color:var(--text); border-left-color:var(--accent)}
+  nav .group{font-size:.68rem; text-transform:uppercase; letter-spacing:.08em;
+    color:#5a6a7a; margin:1.1rem 0 .3rem .7rem; font-weight:700}
+  main{flex:1; padding:2rem 2.5rem; max-width:900px; min-width:0}
+  section{margin-bottom:3rem; scroll-margin-top:170px}
+  h2{
+    font-size:1.45rem; margin-bottom:1rem; padding-bottom:.5rem;
+    border-bottom:2px solid var(--accent); color:var(--accent);
+  }
+  h3{font-size:1.1rem; margin:1.6rem 0 .6rem; color:var(--accent2)}
+  h4{font-size:.98rem; margin:1rem 0 .4rem; color:var(--warn)}
+  p{margin-bottom:.9rem}
+  ul,ol{margin:0 0 1rem 1.5rem}
+  li{margin-bottom:.35rem}
+  .card{
+    background:var(--panel); border:1px solid var(--border);
+    border-radius:10px; padding:1.1rem 1.3rem; margin:1.1rem 0;
+  }
+  .card.accent{border-left:3px solid var(--accent)}
+  .card.green{border-left:3px solid var(--accent2)}
+  .card.warn{border-left:3px solid var(--warn)}
+  .card.danger{border-left:3px solid var(--danger)}
+  .formula{
+    background:#0d1117; border:1px solid var(--border); border-radius:8px;
+    padding:.9rem 1.1rem; margin:1rem 0; font-family:"Courier New",monospace;
+    font-size:1rem; color:#c9d1d9; overflow-x:auto; text-align:center;
+  }
+  .formula .lbl{display:block; font-size:.75rem; color:var(--muted);
+    font-family:inherit; margin-top:.4rem; text-align:center}
+  table{width:100%; border-collapse:collapse; margin:1rem 0; font-size:.88rem}
+  th,td{border:1px solid var(--border); padding:.5rem .7rem; text-align:left}
+  th{background:var(--panel2); color:var(--accent); font-weight:600}
+  tr:nth-child(even){background:var(--panel)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+  @media(max-width:900px){
+    .grid2{grid-template-columns:1fr}
+    nav{display:none}
+    main{padding:1.5rem}
+  }
+  .example{
+    background:rgba(78,161,255,.08); border:1px dashed var(--accent);
+    border-radius:8px; padding:.9rem 1.1rem; margin:1rem 0;
+  }
+  .example strong{color:var(--accent)}
+  .key{background:rgba(126,231,135,.1); border-left:3px solid var(--accent2);
+    padding:.8rem 1rem; border-radius:6px; margin:1rem 0}
+  .warnbox{background:rgba(255,166,87,.1); border-left:3px solid var(--warn);
+    padding:.8rem 1rem; border-radius:6px; margin:1rem 0}
+  code{background:var(--panel2); padding:.1rem .4rem; border-radius:4px;
+    font-size:.88em; color:var(--warn)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Microeconomics — Complete Study Guide</h1>
+  <p>Demand · Supply · Equilibrium · Trade · Welfare · Taxation · Market Structure</p>
+  <div class="toc-top">
+    <a href="#demand">Demand</a>
+    <a href="#supply">Supply</a>
+    <a href="#equilibrium">Equilibrium</a>
+    <a href="#elasticity">Elasticity</a>
+    <a href="#welfare">Welfare</a>
+    <a href="#tax">Taxation</a>
+    <a href="#trade">Trade</a>
+    <a href="#monopolistic">Monopolistic Competition</a>
+    <a href="#exam">Exam</a>
+  </div>
+</header>
+
+<div class="wrap">
+<nav>
+  <div class="group">Foundations</div>
+  <a href="#preference">1. Preference &amp; Utility</a>
+  <a href="#indifference">2. Indifference Curves</a>
+  <a href="#mrs">3. MRS</a>
+  <a href="#optimization">4. Consumer Optimization</a>
+  <a href="#income-sub">5. Income vs Substitution</a>
+
+  <div class="group">Demand</div>
+  <a href="#demand">6. Law of Demand</a>
+  <a href="#demand-shift">7. Shifts in Demand</a>
+  <a href="#elasticity">8. Price Elasticity</a>
+  <a href="#elasticity-curve">9. Elasticity Along Curve</a>
+
+  <div class="group">Supply</div>
+  <a href="#supply">10. Cost Functions</a>
+  <a href="#mc-atc">11. MC vs ATC</a>
+  <a href="#law-supply">12. Law of Supply</a>
+  <a href="#supply-elasticity">13. Supply Elasticity</a>
+
+  <div class="group">Markets</div>
+  <a href="#equilibrium">14. Equilibrium</a>
+  <a href="#perfect-comp">15. Perfect Competition</a>
+  <a href="#welfare">16. Surplus</a>
+  <a href="#dwl">17. Deadweight Loss</a>
+
+  <div class="group">Policy</div>
+  <a href="#tax">18. Taxes</a>
+  <a href="#laffer">19. Laffer Curve</a>
+  <a href="#price-controls">20. Price Controls</a>
+  <a href="#externalities">21. Externalities</a>
+
+  <div class="group">Trade</div>
+  <a href="#exchange">22. Pure Exchange Economy</a>
+  <a href="#comparative">23. Comparative Advantage</a>
+  <a href="#tot">24. Terms of Trade</a>
+  <a href="#trade-welfare">25. Gains from Trade</a>
+  <a href="#tariffs">26. Tariffs</a>
+
+  <div class="group">Advanced</div>
+  <a href="#monopolistic">27. Monopolistic Competition</a>
+  <a href="#increasing-returns">28. Increasing Returns</a>
+  <a href="#exam">29. Exam Practice</a>
+</nav>
+
+<main>
+
+<!-- ============ 1. PREFERENCE ============ -->
+<section id="preference">
+<h2>1. Preference and Utility</h2>
+<p><strong>Utility</strong> is a numerical representation of preferences. A utility function assigns a number to every consumption bundle such that more-preferred bundles get larger numbers.</p>
+
+<div class="card accent">
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Total utility:</strong> total satisfaction from consuming a bundle</li>
+<li><strong>Marginal utility (MU):</strong> extra satisfaction from one additional unit</li>
+<li><strong>Monotonicity:</strong> more of a good is always preferred</li>
+<li><strong>Diminishing marginal utility:</strong> as you consume more, each extra unit gives less additional satisfaction</li>
+</ul>
+</div>
+
+<div class="formula">
+MU<sub>x</sub> = ∂U / ∂x
+<span class="lbl">Marginal utility of good x</span>
+</div>
+
+<div class="example">
+<strong>Example:</strong> First slice of pizza → 40 utility. Second → 25. Third → 10. Diminishing marginal utility.
+</div>
+</section>
+
+<!-- ============ 2. INDIFFERENCE ============ -->
+<section id="indifference">
+<h2>2. Indifference Curves</h2>
+<p>An <strong>indifference curve</strong> shows all bundles that give the consumer the <em>same</em> utility. Along the curve, the consumer is indifferent.</p>
+
+<h3>Four Properties</h3>
+<ol>
+<li><strong>Higher curves preferred:</strong> more utility</li>
+<li><strong>Downward sloping:</strong> give up one good → need more of the other</li>
+<li><strong>Never cross:</strong> would violate property 1</li>
+<li><strong>Bowed inward (convex):</strong> diminishing MRS</li>
+</ol>
+
+<h3>Special Cases</h3>
+<table>
+<tr><th>Type</th><th>Utility Function</th><th>Curve Shape</th></tr>
+<tr><td>Perfect substitutes</td><td>U = aC₁ + bC₂</td><td>Straight lines</td></tr>
+<tr><td>Perfect complements</td><td>U = min{aC₁, bC₂}</td><td>L-shaped</td></tr>
+<tr><td>Cobb-Douglas</td><td>U = C₁ᵃ C₂ᵇ</td><td>Smooth convex</td></tr>
+<tr><td>Quasi-linear</td><td>U = C₁ᵃ + bC₂</td><td>Convex, flat at high C₂</td></tr>
+</table>
+</section>
+
+<!-- ============ 3. MRS ============ -->
+<section id="mrs">
+<h2>3. Marginal Rate of Substitution</h2>
+<p>The <strong>MRS</strong> is the rate at which a consumer will trade one good for another while staying on the same indifference curve.</p>
+
+<div class="formula">
+MRS = − Δx₂ / Δx₁ = MU₁ / MU₂
+<span class="lbl">Slope of the indifference curve (absolute value)</span>
+</div>
+
+<div class="key">
+<strong>Diminishing MRS:</strong> As you get more of good 1, you give up less of good 2 for another unit. This is why indifference curves are convex.
+</div>
+
+<h3>Why Diminishing MRS Happens</h3>
+<ul>
+<li>More x₁ → MU₁ falls</li>
+<li>Less x₂ → MU₂ rises</li>
+<li>So MRS = MU₁/MU₂ falls</li>
+</ul>
+</section>
+
+<!-- ============ 4. OPTIMIZATION ============ -->
+<section id="optimization">
+<h2>4. Consumer Optimization</h2>
+<p>Consumer maximizes utility subject to a budget constraint.</p>
+
+<div class="formula">
+max U(C₁, C₂) &nbsp; s.t. &nbsp; P₁C₁ + P₂C₂ ≤ W
+</div>
+
+<h3>Optimality Condition</h3>
+<div class="formula">
+MU₁ / P₁ = MU₂ / P₂
+<span class="lbl">Equal marginal utility per dollar</span>
+</div>
+
+<p>Equivalently:</p>
+<div class="formula">
+MRS = P₁ / P₂
+<span class="lbl">Indifference curve tangent to budget line</span>
+</div>
+
+<div class="card green">
+<h4>Intuition</h4>
+<p>If MU₁/P₁ &gt; MU₂/P₂, the last dollar on good 1 gives more utility. Buy more of good 1 until equal.</p>
+</div>
+
+<h3>Dollar-by-Dollar Allocation</h3>
+<ol>
+<li>Compute MU per dollar: MU/P</li>
+<li>Spend each dollar on the good with the highest MU/P</li>
+<li>Stop when budget exhausted or MU/P equalizes</li>
+</ol>
+
+<div class="example">
+<strong>Linda's example:</strong> Handbags $1, Trips $2, Income $9.<br>
+MU/$ for 1st bag = 16, 1st trip = 14, 2nd bag = 12, 2nd trip = 11, 3rd bag = 9, 3rd trip = 9.<br>
+Optimal: <strong>3 bags + 3 trips</strong> → total utility = 37 + 68 = <strong>105</strong>
+</div>
+</section>
+
+<!-- ============ 5. INCOME VS SUB ============ -->
+<section id="income-sub">
+<h2>5. Income vs Substitution Effects</h2>
+<p>When a price changes, the total change in quantity demanded decomposes into two effects.</p>
+
+<div class="grid2">
+<div class="card accent">
+<h4>Substitution Effect</h4>
+<p>The good becomes relatively cheaper → consumers substitute toward it.</p>
+<p><strong>Always positive</strong></p>
+</div>
+<div class="card warn">
+<h4>Income Effect</h4>
+<p>The price change alters real purchasing power.</p>
+<ul>
+<li><strong>Normal good:</strong> positive</li>
+<li><strong>Inferior good:</strong> negative</li>
+</ul>
+</div>
+</div>
+
+<h3>Slutsky Identity</h3>
+<div class="formula">
+ΔC₁ = [C(P₁', W') − C(P₁, W)] + [C(P₁', W) − C(P₁', W')]
+<span class="lbl">Substitution effect + Income effect</span>
+</div>
+
+<div class="warnbox">
+<strong>Giffen Good:</strong> If income effect dominates substitution effect, a price decrease leads to a <em>decrease</em> in quantity demanded. Violates law of demand.
+</div>
+
+<h3>Real-World Evidence</h3>
+<p>Jensen &amp; Miller (2008): 1% decrease in rice prices → 0.24% <em>decrease</em> in rice consumption in poor Chinese households. Rice was a staple; when cheaper, households bought meat instead.</p>
+</section>
+
+<!-- ============ 6. DEMAND ============ -->
+<section id="demand">
+<h2>6. Law of Demand</h2>
+
+<div class="key">
+<strong>Law of Demand:</strong> Quantity demanded falls when price rises, other things constant.
+</div>
+
+<p>Follows from optimization: if a good is normal, substitution effect (negative) dominates or reinforces income effect.</p>
+
+<h3>Demand vs Quantity Demanded</h3>
+<table>
+<tr><th>Concept</th><th>Meaning</th><th>Graph</th></tr>
+<tr><td>Quantity demanded</td><td>Amount at a <em>specific</em> price</td><td>A point on the curve</td></tr>
+<tr><td>Demand</td><td>Schedule at <em>all</em> prices</td><td>The entire curve</td></tr>
+<tr><td>Movement along</td><td>Caused by price change</td><td>Move along the curve</td></tr>
+<tr><td>Shift</td><td>Caused by non-price factors</td><td>Entire curve moves</td></tr>
+</table>
+</section>
+
+<!-- ============ 7. DEMAND SHIFT ============ -->
+<section id="demand-shift">
+<h2>7. Shifts in Demand</h2>
+
+<table>
+<tr><th>Factor</th><th>Demand ↑ (right)</th><th>Demand ↓ (left)</th></tr>
+<tr><td>Income (normal)</td><td>Higher income</td><td>Lower income</td></tr>
+<tr><td>Income (inferior)</td><td>Lower income</td><td>Higher income</td></tr>
+<tr><td>Substitutes</td><td>Substitute price rises</td><td>Substitute price falls</td></tr>
+<tr><td>Complements</td><td>Complement price falls</td><td>Complement price rises</td></tr>
+<tr><td>Tastes</td><td>More popular</td><td>Less popular</td></tr>
+<tr><td>Expectations</td><td>Expect higher future prices</td><td>Expect lower future prices</td></tr>
+<tr><td>Number of buyers</td><td>More buyers</td><td>Fewer buyers</td></tr>
+</table>
+
+<div class="warnbox">
+<strong>Key:</strong> A change in the good's <em>own price</em> moves you <em>along</em> the curve. It does NOT shift it.
+</div>
+</section>
+
+<!-- ============ 8. ELASTICITY ============ -->
+<section id="elasticity">
+<h2>8. Price Elasticity of Demand</h2>
+
+<div class="formula">
+ε<sub>D</sub> = − (%ΔQ) / (%ΔP) = − (∂Q/∂P) · (P/Q)
+<span class="lbl">Percentage change in quantity for a 1% change in price</span>
+</div>
+
+<h3>Categories</h3>
+<table>
+<tr><th>Value</th><th>Name</th><th>Meaning</th></tr>
+<tr><td>|ε| &gt; 1</td><td>Elastic</td><td>Quantity responds more than proportionally</td></tr>
+<tr><td>|ε| = 1</td><td>Unit elastic</td><td>Proportional response</td></tr>
+<tr><td>|ε| &lt; 1</td><td>Inelastic</td><td>Quantity responds less than proportionally</td></tr>
+<tr><td>|ε| = ∞</td><td>Perfectly elastic</td><td>Horizontal demand</td></tr>
+<tr><td>|ε| = 0</td><td>Perfectly inelastic</td><td>Vertical demand</td></tr>
+</table>
+
+<h3>Determinants</h3>
+<ul>
+<li><strong>Substitutes:</strong> more substitutes → more elastic</li>
+<li><strong>Time horizon:</strong> longer run → more elastic</li>
+<li><strong>Necessity:</strong> less necessary → more elastic</li>
+<li><strong>Market definition:</strong> narrower → more elastic</li>
+<li><strong>Budget share:</strong> larger share → more elastic</li>
+</ul>
+
+<h3>Real-World Elasticities</h3>
+<table>
+<tr><th>Good</th><th>Elasticity</th><th>Category</th></tr>
+<tr><td>Eggs</td><td>0.1</td><td>Very inelastic</td></tr>
+<tr><td>Healthcare</td><td>0.2</td><td>Very inelastic</td></tr>
+<tr><td>Cigarettes</td><td>0.4</td><td>Inelastic</td></tr>
+<tr><td>Rice</td><td>0.5</td><td>Inelastic</td></tr>
+<tr><td>Housing</td><td>0.7</td><td>Inelastic</td></tr>
+<tr><td>Beef</td><td>1.6</td><td>Elastic</td></tr>
+<tr><td>Restaurant meals</td><td>2.3</td><td>Elastic</td></tr>
+<tr><td>Cheerios</td><td>3.7</td><td>Very elastic</td></tr>
+</table>
+</section>
+
+<!-- ============ 9. ELASTICITY CURVE ============ -->
+<section id="elasticity-curve">
+<h2>9. Elasticity Along a Demand Curve</h2>
+
+<p>For a <strong>linear</strong> demand curve, elasticity changes along the curve even though slope is constant.</p>
+
+<div class="formula">
+ε = (∂Q/∂P) · (P/Q)
+<span class="lbl">Slope constant; P/Q changes</span>
+</div>
+
+<table>
+<tr><th>Location</th><th>P</th><th>Q</th><th>P/Q</th><th>|ε|</th></tr>
+<tr><td>Top left (price axis)</td><td>High</td><td>Low</td><td>Large</td><td>Elastic</td></tr>
+<tr><td>Midpoint</td><td>Medium</td><td>Medium</td><td>1</td><td>Unit elastic</td></tr>
+<tr><td>Bottom right (quantity axis)</td><td>Low</td><td>High</td><td>Small</td><td>Inelastic</td></tr>
+</table>
+
+<div class="key">
+<strong>Intuition:</strong> Near the top, a $1 price change is a small % of a high price, but the quantity change is a large % of a small quantity. Near the bottom, the opposite.
+</div>
+
+<div class="warnbox">
+<strong>Caveat:</strong> This pattern holds for <em>linear</em> demand. A constant-elasticity demand curve (Q = AP<sup>−α</sup>) has the same elasticity everywhere.
+</div>
+</section>
+
+<!-- ============ 10. SUPPLY ============ -->
+<section id="supply">
+<h2>10. Cost Functions</h2>
+
+<table>
+<tr><th>Concept</th><th>Formula</th><th>Meaning</th></tr>
+<tr><td>Total cost</td><td>C(q)</td><td>Minimum cost to produce q</td></tr>
+<tr><td>Average cost</td><td>AC(q) = C(q)/q</td><td>Cost per unit</td></tr>
+<tr><td>Marginal cost</td><td>MC(q) = C′(q)</td><td>Cost of one more unit</td></tr>
+<tr><td>Fixed cost</td><td>F</td><td>Does not vary with output</td></tr>
+<tr><td>Variable cost</td><td>VC(q)</td><td>Varies with output</td></tr>
+</table>
+
+<h3>Production Function</h3>
+<div class="formula">
+q = F(l, k, e, m; z)
+<span class="lbl">Output as function of labor, capital, energy, materials, technology</span>
+</div>
+
+<h3>Marginal Product</h3>
+<div class="formula">
+MP<sub>x</sub> = ∂F / ∂x
+<span class="lbl">Extra output from one more unit of input x</span>
+</div>
+
+<div class="key">
+<strong>Diminishing marginal product:</strong> As you add more of one input (others fixed), extra output eventually falls. This is why MC rises.
+</div>
+</section>
+
+<!-- ============ 11. MC ATC ============ -->
+<section id="mc-atc">
+<h2>11. Marginal Cost vs Average Total Cost</h2>
+
+<div class="card accent">
+<ul>
+<li>When <strong>MC &lt; ATC</strong>, ATC is <strong>falling</strong></li>
+<li>When <strong>MC &gt; ATC</strong>, ATC is <strong>rising</strong></li>
+<li>MC crosses ATC at its <strong>minimum</strong></li>
+</ul>
+</div>
+
+<h3>Mathematical Proof</h3>
+<p>Let ATC = TC/Q. Differentiate:</p>
+<div class="formula">
+d(ATC)/dQ = (MC · Q − TC) / Q² = (MC − ATC) / Q
+</div>
+<p>Since Q &gt; 0:</p>
+<ul>
+<li>MC &lt; ATC → derivative negative → ATC falling</li>
+<li>MC &gt; ATC → derivative positive → ATC rising</li>
+<li>MC = ATC → derivative zero → ATC at minimum</li>
+</ul>
+
+<div class="example">
+<strong>Analogy:</strong> If your exam average is 80% and you score 70% on the next test, average falls. If you score 90%, average rises. If exactly 80%, average stays at its turning point.
+</div>
+</section>
+
+<!-- ============ 12. LAW OF SUPPLY ============ -->
+<section id="law-supply">
+<h2>12. Law of Supply</h2>
+
+<div class="key">
+<strong>Law of Supply:</strong> Quantity supplied rises as price rises, other things constant.
+</div>
+
+<p>Follows from profit maximization:</p>
+<div class="formula">
+max π = P(q)·q − C(q) − F
+</div>
+<p>For a price-taking firm, supply function:</p>
+<div class="formula">
+P = MC(q)
+<span class="lbl">Firm produces where price equals marginal cost</span>
+</div>
+
+<h3>Shifts in Supply</h3>
+<table>
+<tr><th>Factor</th><th>Supply ↑ (right)</th><th>Supply ↓ (left)</th></tr>
+<tr><td>Input prices</td><td>Cheaper inputs</td><td>Expensive inputs</td></tr>
+<tr><td>Technology</td><td>Better technology</td><td>Worse technology</td></tr>
+<tr><td>Expectations</td><td>Expect lower future prices</td><td>Expect higher future prices</td></tr>
+<tr><td>Taxes/subsidies</td><td>Subsidies</td><td>Taxes</td></tr>
+<tr><td>Number of sellers</td><td>More firms enter</td><td>Firms exit</td></tr>
+</table>
+</section>
+
+<!-- ============ 13. SUPPLY ELASTICITY ============ -->
+<section id="supply-elasticity">
+<h2>13. Price Elasticity of Supply</h2>
+
+<div class="formula">
+ε<sub>S</sub> = (%ΔQ<sub>s</sub>) / (%ΔP) = (∂Q<sub>s</sub>/∂P) · (P/Q)
+</div>
+
+<h3>Along a Linear Supply Curve</h3>
+<table>
+<tr><th>Supply curve form</th><th>At low P/Q</th><th>As P and Q rise</th><th>Range</th></tr>
+<tr><td>Hits quantity axis (Q = a + bP, a &gt; 0)</td><td>ε = 0</td><td>Rises toward 1</td><td>0 &lt; ε &lt; 1</td></tr>
+<tr><td>Through origin (Q = bP)</td><td>ε = 1</td><td>ε = 1</td><td>ε = 1</td></tr>
+<tr><td>Hits price axis (Q = −c + bP)</td><td>ε → ∞</td><td>Falls toward 1</td><td>ε &gt; 1</td></tr>
+</table>
+
+<h3>Determinants</h3>
+<table>
+<tr><th>More Elastic</th><th>Less Elastic</th></tr>
+<tr><td>Spare production capacity</td><td>Factories near capacity</td></tr>
+<tr><td>Standardized materials</td><td>Specialized inputs/tooling</td></tr>
+<tr><td>Many qualified suppliers</td><td>Few approved suppliers</td></tr>
+<tr><td>Longer adjustment horizon</td><td>Tight delivery deadline</td></tr>
+</table>
+
+<div class="key">
+<strong>Short run vs long run:</strong> Supply is more elastic in the long run because firms can adjust all inputs.
+</div>
+</section>
+
+<!-- ============ 14. EQUILIBRIUM ============ -->
+<section id="equilibrium">
+<h2>14. Market Equilibrium</h2>
+
+<p>Equilibrium: opposing forces cancel out.</p>
+
+<div class="formula">
+Q<sup>d</sup> = Q<sup>s</sup> &nbsp; and &nbsp; U′(Q<sup>d</sup>) = C′(Q<sup>s</sup>) = P<sup>*</sup>
+</div>
+
+<h3>Excess Supply and Demand</h3>
+<table>
+<tr><th>Situation</th><th>Condition</th><th>Price pressure</th></tr>
+<tr><td>Excess supply (surplus)</td><td>Q<sup>s</sup> &gt; Q<sup>d</sup></td><td>Prices fall</td></tr>
+<tr><td>Excess demand (shortage)</td><td>Q<sup>d</sup> &gt; Q<sup>s</sup></td><td>Prices rise</td></tr>
+<tr><td>Equilibrium</td><td>Q<sup>d</sup> = Q<sup>s</sup></td><td>No pressure</td></tr>
+</table>
+
+<h3>Consumer and Producer Problems</h3>
+<div class="grid2">
+<div class="card">
+<h4>Consumer</h4>
+<div class="formula" style="font-size:.9rem">
+max U(Q<sup>d</sup>) − H &nbsp; s.t. &nbsp; PQ<sup>d</sup> ≤ H
+</div>
+<p>Solution: <code>P = U′(Q<sup>d</sup>)</code></p>
+</div>
+<div class="card">
+<h4>Producer</h4>
+<div class="formula" style="font-size:.9rem">
+max PQ<sup>s</sup> − C(Q<sup>s</sup>)
+</div>
+<p>Solution: <code>P = C′(Q<sup>s</sup>)</code></p>
+</div>
+</div>
+</section>
+
+<!-- ============ 15. PERFECT COMP ============ -->
+<section id="perfect-comp">
+<h2>15. Perfect Competition</h2>
+
+<h3>Assumptions</h3>
+<ol>
+<li>Homogeneous product</li>
+<li>No taxes or transaction costs; factors freely mobile</li>
+<li>Market outcomes affect only buyers and sellers in that market</li>
+<li>Participants infinitely small → <strong>price takers</strong></li>
+<li>Buyers and sellers fully informed</li>
+<li>All individuals self-interested</li>
+<li>All possible scenarios fully accounted for</li>
+</ol>
+
+<h3>What Happens When Assumptions Fail</h3>
+<table>
+<tr><th>Violation</th><th>Consequence</th></tr>
+<tr><td>Not infinitely small (supply side)</td><td>Market power (monopoly, oligopoly)</td></tr>
+<tr><td>Not infinitely small (demand side)</td><td>Monopsony, inequality</td></tr>
+<tr><td>Outcomes affect others</td><td>Externalities</td></tr>
+<tr><td>Imperfect information</td><td>Asymmetric information, coordination failures</td></tr>
+<tr><td>Not all scenarios accounted</td><td>Incomplete markets</td></tr>
+</table>
+</section>
+
+<!-- ============ 16. WELFARE ============ -->
+<section id="welfare">
+<h2>16. Consumer and Producer Surplus</h2>
+
+<div class="grid2">
+<div class="card green">
+<h4>Consumer Surplus</h4>
+<p><strong>WTP:</strong> Maximum a buyer will pay</p>
+<p><strong>CS = WTP − P</strong></p>
+<p>Area below demand, above price.</p>
+</div>
+<div class="card accent">
+<h4>Producer Surplus</h4>
+<p><strong>WTS:</strong> Minimum a seller will accept (= cost)</p>
+<p><strong>PS = P − cost</strong></p>
+<p>Area above supply, below price.</p>
+</div>
+</div>
+
+<h3>Total Surplus and Efficiency</h3>
+<div class="formula">
+TS = CS + PS
+</div>
+
+<p><strong>Efficiency:</strong> Allocation maximizes total surplus.</p>
+
+<div class="key">
+<strong>Free market outcomes:</strong>
+<ul>
+<li>Allocate supply to buyers who value it most</li>
+<li>Allocate demand to sellers who produce at lowest cost</li>
+<li>Produce quantity that maximizes CS + PS</li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 17. DWL ============ -->
+<section id="dwl">
+<h2>17. Deadweight Loss</h2>
+
+<p>DWL is the fall in total surplus from a market distortion (tax, price control, monopoly).</p>
+
+<div class="formula">
+DWL = ½ × tax × (Q<sup>no tax</sup> − Q<sup>with tax</sup>)
+<span class="lbl">Area of the triangle of lost trades</span>
+</div>
+
+<h3>Why DWL Occurs</h3>
+<p>A tax drives a wedge between buyer price and seller price. Some mutually beneficial trades no longer happen. Their surplus is destroyed — nobody gets it.</p>
+
+<h3>What Determines DWL Size</h3>
+<table>
+<tr><th>Factor</th><th>Effect on DWL</th></tr>
+<tr><td>Tax rate (t)</td><td>Larger t → larger DWL (quadratically)</td></tr>
+<tr><td>Demand elasticity</td><td>More elastic → larger DWL</td></tr>
+<tr><td>Supply elasticity</td><td>More elastic → larger DWL</td></tr>
+<tr><td>Market size</td><td>Larger market → larger absolute DWL</td></tr>
+</table>
+
+<div class="formula">
+DWL ∝ t²
+<span class="lbl">Doubling the tax quadruples the deadweight loss</span>
+</div>
+</section>
+
+<!-- ============ 18. TAX ============ -->
+<section id="tax">
+<h2>18. Taxes</h2>
+
+<p>An excise tax is levied on a specific good. It creates a wedge between buyer price (P<sub>d</sub>) and seller price (P<sub>s</sub>).</p>
+
+<div class="formula">
+P<sub>d</sub> − P<sub>s</sub> = t
+<span class="lbl">Tax wedge</span>
+</div>
+
+<h3>Tax Revenue and Deadweight Loss</h3>
+<table>
+<tr><th>Area</th><th>Meaning</th><th>Where it goes</th></tr>
+<tr><td>A</td><td>Consumer surplus lost</td><td>Government (tax revenue)</td></tr>
+<tr><td>C</td><td>Producer surplus lost</td><td>Government (tax revenue)</td></tr>
+<tr><td>B</td><td>Lost consumer surplus</td><td>Nobody — destroyed</td></tr>
+<tr><td>D</td><td>Lost producer surplus</td><td>Nobody — destroyed</td></tr>
+<tr><td>A + C</td><td>Total tax revenue</td><td>Government</td></tr>
+<tr><td>B + D</td><td>Deadweight loss</td><td>Destroyed</td></tr>
+</table>
+
+<h3>Tax Incidence (Who Bears the Tax)</h3>
+<div class="formula">
+Buyer's share = E<sub>s</sub> / (E<sub>s</sub> + E<sub>d</sub>)
+Seller's share = E<sub>d</sub> / (E<sub>s</sub> + E<sub>d</sub>)
+</div>
+
+<div class="key">
+<strong>Rule:</strong> The more inelastic side bears more of the tax. The more elastic side bears less.
+</div>
+
+<h3>Effects of Elasticity on DWL</h3>
+<table>
+<tr><th>Scenario</th><th>DWL</th></tr>
+<tr><td>Inelastic supply</td><td>Small</td></tr>
+<tr><td>Elastic supply</td><td>Large</td></tr>
+<tr><td>Inelastic demand</td><td>Small</td></tr>
+<tr><td>Elastic demand</td><td>Large</td></tr>
+</table>
+
+<div class="example">
+<strong>Policy implication:</strong> Tax goods with inelastic demand/supply (cigarettes, gasoline) for revenue with small DWL. Avoid taxing elastic goods heavily.
+</div>
+</section>
+
+<!-- ============ 19. LAFFER ============ -->
+<section id="laffer">
+<h2>19. Laffer Curve</h2>
+
+<p>The Laffer curve shows the relationship between tax rate and tax revenue.</p>
+
+<h3>Two Forces at Play</h3>
+<ul>
+<li><strong>Price effect:</strong> Higher tax per unit → more revenue per unit</li>
+<li><strong>Quantity effect:</strong> Higher tax → fewer units sold → less revenue</li>
+</ul>
+
+<p>At low taxes, price effect dominates (revenue rises). At high taxes, quantity effect dominates (revenue falls).</p>
+
+<h3>The Shape</h3>
+<div class="formula">
+Tax Revenue = t × Q(t)
+<span class="lbl">Revenue is zero at t = 0 and at t = prohibitive</span>
+</div>
+
+<p>Inverted U-shape: rises, peaks, then falls.</p>
+
+<div class="warnbox">
+<strong>Where is the peak?</strong> Economists debate this. Most modern estimates suggest developed countries are on the left side of the curve for most taxes.
+</div>
+
+<h3>Three Scenarios</h3>
+<table>
+<tr><th>Scenario</th><th>Tax Size</th><th>Tax Revenue</th><th>DWL</th></tr>
+<tr><td>Small tax</td><td>Low</td><td>Moderate</td><td>Very small</td></tr>
+<tr><td>Medium tax</td><td>Medium</td><td>Maximum</td><td>Growing</td></tr>
+<tr><td>Large tax</td><td>High</td><td>Falling</td><td>Huge</td></tr>
+</table>
+</section>
+
+<!-- ============ 20. PRICE CONTROLS ============ -->
+<section id="price-controls">
+<h2>20. Price Controls</h2>
+
+<div class="grid2">
+<div class="card warn">
+<h4>Price Ceiling</h4>
+<p>Legal maximum price, set <strong>below</strong> equilibrium.</p>
+<p><strong>Why:</strong> Make essentials affordable; prevent gouging.</p>
+<p><strong>Result:</strong> Shortages, black markets, reduced quality.</p>
+<p><strong>Examples:</strong> Rent control, anti-gouging laws.</p>
+</div>
+<div class="card danger">
+<h4>Price Floor</h4>
+<p>Legal minimum price, set <strong>above</strong> equilibrium.</p>
+<p><strong>Why:</strong> Support incomes; protect producers.</p>
+<p><strong>Result:</strong> Surpluses, unemployment, wasted resources.</p>
+<p><strong>Examples:</strong> Minimum wage, agricultural supports.</p>
+</div>
+</div>
+
+<h3>Core Trade-off</h3>
+<table>
+<tr><th>Goal</th><th>Policy</th><th>Benefit</th><th>Cost</th></tr>
+<tr><td>Affordable goods</td><td>Price ceiling</td><td>Lower prices</td><td>Shortages</td></tr>
+<tr><td>Support incomes</td><td>Price floor</td><td>Higher incomes</td><td>Surpluses</td></tr>
+</table>
+
+<div class="key">
+<strong>Bottom line:</strong> Price controls prevent markets from clearing. They create shortages (ceilings) or surpluses (floors).
+</div>
+</section>
+
+<!-- ============ 21. EXTERNALITIES ============ -->
+<section id="externalities">
+<h2>21. Externalities</h2>
+
+<p>An <strong>externality</strong> occurs when a market outcome affects people who are not buyers or sellers in that market.</p>
+
+<div class="grid2">
+<div class="card danger">
+<h4>Negative Externality</h4>
+<p>Social cost &gt; private cost.</p>
+<p>Example: Pollution from a factory.</p>
+<p>Result: Overproduction relative to social optimum.</p>
+<p><strong>Policy:</strong> Pigouvian tax, cap-and-trade.</p>
+</div>
+<div class="card green">
+<h4>Positive Externality</h4>
+<p>Social benefit &gt; private benefit.</p>
+<p>Example: Education, vaccination.</p>
+<p>Result: Underproduction relative to social optimum.</p>
+<p><strong>Policy:</strong> Subsidy, public provision.</p>
+</div>
+</div>
+
+<h3>Coase Theorem</h3>
+<p>If property rights are well-defined and transaction costs are zero, parties can negotiate to internalize the externality regardless of initial assignment of rights.</p>
+
+<div class="warnbox">
+<strong>In practice:</strong> Transaction costs, asymmetric information, and bargaining failures often prevent Coasean solutions. Government intervention may be needed.
+</div>
+</section>
+
+<!-- ============ 22. PURE EXCHANGE ============ -->
+<section id="exchange">
+<h2>22. Pure Exchange Economy</h2>
+
+<p>An economy where two parties have fixed endowments and trade to improve welfare. No production.</p>
+
+<h3>Setup</h3>
+<ul>
+<li>Party A has endowment (ω<sub>A</sub>¹, ω<sub>A</sub>²), utility u<sub>A</sub>(x<sub>A</sub>¹, x<sub>A</sub>²)</li>
+<li>Party B has endowment (ω<sub>B</sub>¹, ω<sub>B</sub>²), utility u<sub>B</sub>(x<sub>B</sub>¹, x<sub>B</sub>²)</li>
+<li>Prices p₁, p₂</li>
+</ul>
+
+<h3>The Edgeworth Box</h3>
+<p>The box shows the entire economy. Width = total Good 1, height = total Good 2.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li><strong>W:</strong> Endowment point (initial allocation)</li>
+<li><strong>M:</strong> Mutually beneficial trade</li>
+<li><strong>Blue lens:</strong> All trades that make both better off</li>
+<li><strong>Contract curve:</strong> All Pareto efficient allocations</li>
+</ul>
+
+<h3>Pareto Efficiency</h3>
+<p>An allocation is Pareto efficient if no one can be made better off without making someone worse off. This occurs where indifference curves are tangent:</p>
+<div class="formula">
+MRS<sub>A</sub> = MRS<sub>B</sub> = p₁ / p₂
+</div>
+</section>
+
+<!-- ============ 23. COMPARATIVE ADVANTAGE ============ -->
+<section id="comparative">
+<h2>23. Comparative Advantage</h2>
+
+<div class="grid2">
+<div class="card accent">
+<h4>Absolute Advantage</h4>
+<p>Produce more output with same inputs, or same output with fewer inputs.</p>
+<p>Introduced by Adam Smith (1776).</p>
+</div>
+<div class="card green">
+<h4>Comparative Advantage</h4>
+<p>Produce at lower opportunity cost than another country.</p>
+<p>Introduced by David Ricardo (1817).</p>
+</div>
+</div>
+
+<h3>Ricardo's Portugal-England Example</h3>
+<table>
+<tr><th>Country</th><th>Cloth (hrs/unit)</th><th>Wine (hrs/unit)</th></tr>
+<tr><td>England</td><td>10</td><td>20</td></tr>
+<tr><td>Portugal</td><td>8</td><td>12</td></tr>
+</table>
+
+<p>Portugal has absolute advantage in both goods.</p>
+
+<h3>Opportunity Costs</h3>
+<table>
+<tr><th>Country</th><th>Opp. cost of 1 Cloth</th><th>Opp. cost of 1 Wine</th></tr>
+<tr><td>England</td><td>0.5 Wine</td><td>2 Cloth</td></tr>
+<tr><td>Portugal</td><td>0.67 Wine</td><td>1.5 Cloth</td></tr>
+</table>
+
+<div class="key">
+<strong>Comparative advantage:</strong>
+<ul>
+<li>England: cloth (0.5 &lt; 0.67)</li>
+<li>Portugal: wine (1.5 &lt; 2)</li>
+</ul>
+</div>
+
+<h3>Autarky Relative Prices</h3>
+<div class="formula">
+P<sub>C</sub> / P<sub>W</sub> = a<sub>C</sub> / a<sub>W</sub>
+<span class="lbl">Relative price equals ratio of labor requirements</span>
+</div>
+
+<table>
+<tr><th>Country</th><th>P<sub>C</sub>/P<sub>W</sub></th></tr>
+<tr><td>England</td><td>10/20 = 0.50</td></tr>
+<tr><td>Portugal</td><td>8/12 = 0.67</td></tr>
+</table>
+
+<h3>Why 1/a is productivity</h3>
+<ul>
+<li>a<sub>C</sub> = hours per unit of cloth (input measure)</li>
+<li>1/a<sub>C</sub> = units of cloth per hour (productivity)</li>
+<li>Wage = price × productivity = P × (1/a)</li>
+<li>Wages equalize across sectors → P<sub>C</sub>/P<sub>W</sub> = a<sub>C</sub>/a<sub>W</sub></li>
+</ul>
+</section>
+
+<!-- ============ 24. TOT ============ -->
+<section id="tot">
+<h2>24. Terms of Trade</h2>
+
+<div class="formula">
+ToT = P<sub>EX</sub> / P<sub>IM</sub>
+<span class="lbl">Price of exports relative to imports</span>
+</div>
+
+<p>This is how many units of imports a country gets per unit of exports.</p>
+
+<h3>Why It Means "Units of Imports per Export"</h3>
+<p>If P<sub>EX</sub> = $10 and P<sub>IM</sub> = $5:</p>
+<div class="formula">
+ToT = 10/5 = 2
+<span class="lbl">1 export buys 2 imports</span>
+</div>
+
+<h3>For England and Portugal</h3>
+<table>
+<tr><th>Country</th><th>Exports</th><th>Imports</th><th>ToT</th></tr>
+<tr><td>England</td><td>Cloth</td><td>Wine</td><td>P<sub>C</sub>/P<sub>W</sub></td></tr>
+<tr><td>Portugal</td><td>Wine</td><td>Cloth</td><td>P<sub>W</sub>/P<sub>C</sub></td></tr>
+</table>
+
+<h3>Equilibrium ToT</h3>
+<div class="formula">
+0.50 &lt; ToT<sub>England</sub> &lt; 0.67
+<span class="lbl">Must lie between the two autarky prices</span>
+</div>
+
+<p>Equilibrium occurs where England's offer curve intersects Portugal's offer curve. In the example: ToT ≈ 0.60.</p>
+</section>
+
+<!-- ============ 25. TRADE WELFARE ============ -->
+<section id="trade-welfare">
+<h2>25. Gains from Trade</h2>
+
+<h3>Exporting Country</h3>
+<table>
+<tr><th></th><th>Before Trade</th><th>After Trade</th><th>Change</th></tr>
+<tr><td>Consumer Surplus</td><td>A + B</td><td>A</td><td>−B</td></tr>
+<tr><td>Producer Surplus</td><td>C</td><td>B + C + D</td><td>+(B + D)</td></tr>
+<tr><td>Total Surplus</td><td>A + B + C</td><td>A + B + C + D</td><td>+D</td></tr>
+</table>
+
+<p>Area D = gains from trade. Producers gain, consumers lose, but total surplus rises.</p>
+
+<h3>Importing Country</h3>
+<table>
+<tr><th></th><th>Before Trade</th><th>After Trade</th><th>Change</th></tr>
+<tr><td>Consumer Surplus</td><td>A</td><td>A + B + D</td><td>+(B + D)</td></tr>
+<tr><td>Producer Surplus</td><td>B + C</td><td>C</td><td>−B</td></tr>
+<tr><td>Total Surplus</td><td>A + B + C</td><td>A + B + C + D</td><td>+D</td></tr>
+</table>
+
+<p>Consumers gain, producers lose, but total surplus rises.</p>
+
+<div class="key">
+<strong>Key insight:</strong> Trade is positive-sum. Losers could in principle be compensated by winners. In practice, compensation rarely happens — this is the political economy of trade.
+</div>
+
+<h3>The "China Shock"</h3>
+<p>While trade raises total surplus, it creates concentrated losses in import-competing industries. These losses are politically salient and drive opposition to trade.</p>
+</section>
+
+<!-- ============ 26. TARIFFS ============ -->
+<section id="tariffs">
+<h2>26. Tariffs</h2>
+
+<p>A tariff
